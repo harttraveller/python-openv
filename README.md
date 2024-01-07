@@ -1,6 +1,6 @@
 # python-openv
 
-This is a simple utility for loading project environment variables from 1password. It works more or less the same as [python-dotenv](https://github.com/theskumar/python-dotenv).
+This is a simple utility for loading project environment variables from 1password. It works more or less the same as [python-dotenv](https://github.com/theskumar/python-dotenv). It uses the [1password-client](https://github.com/wandera/1password-client) python package to access fields.
 
 ## Purpose
 
