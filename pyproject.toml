@@ -2,6 +2,8 @@
 name = "python-openv"
 version = "0.1.0"
 description = "Basically the same as python-dotenv except integrated with 1password."
+repository = "https://github.com/harttraveller/python-openv"
+documentation = "https://github.com/harttraveller/python-openv/README.md"
 authors = ["Hart Traveller <ruling_fiction.0b@icloud.com>"]
 license = "MIT"
 readme = "README.md"
