@@ -1,5 +1,4 @@
 import os
-from typing import Optional
 from onepassword import OnePassword
 from openv.constant import DOTENV_VAULT
 from openv.exception import (
