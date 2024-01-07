@@ -1,5 +1,21 @@
 # python-openv
 
+Installation:
+
+```sh
+pip install python-openv
+```
+
+Usage:
+
+```python
+from openv import load_openv
+
+load_openv(project="my_project_name")
+```
+
+## Overview
+
 This is a simple utility for loading project environment variables from 1password. It works more or less the same as [python-dotenv](https://github.com/theskumar/python-dotenv). It uses the [1password-client](https://github.com/wandera/1password-client) python package to access fields.
 
 ## Purpose
@@ -11,16 +27,6 @@ In theory, it's more secure, as someone with access to your computer can't go th
 1. In order to use this, you will need to install the [1Password CLI](https://developer.1password.com/docs/cli/get-started/) and turn on the desktop app integration.
 2. You need to have a 1password vault named `.env`.
 3. The title of each item in that vault must be unique within the vault.
-
-## Usage
-
-Using the utility is fairly straightforward.
-
-```python
-from openv import load_openv
-
-load_openv(project="my_project_name")
-```
 
 ## Example Workflow
 
