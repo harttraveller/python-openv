@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-1penv"
+name = "python-openv"
 version = "0.1.0"
 description = "Basically the same as python-dotenv except integrated with 1password."
 authors = ["Hart Traveller <ruling_fiction.0b@icloud.com>"]
