@@ -1,10 +1,24 @@
 import os
 from onepassword import OnePassword
 
+DOTENV_VAULT = ".env"
+
 op = OnePassword()
 
 
-def load_1penv(project: str) -> None:
+class VaultNotFoundError(Exception):
+    def __init__(self, vault):
+        self.vault = vault
+        super().__init__(f"Vault: {self.vault} not found.")
+
+
+def _validate_dotenv_vault_exists() -> None:
+    vault_names = [vault["name"] for vault in op.list_vaults()]
+    if not DOTENV_VAULT not in vault_names:
+        raise VaultNotFoundError(vault=DOTENV_VAULT)
+
+
+def load_openv(project: str) -> None:
     item_ids = [
         item["id"] for item in op.list_items(vault=".env") if item["title"] == project
     ]
