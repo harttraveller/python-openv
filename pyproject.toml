@@ -9,6 +9,7 @@ packages = [{ include = "openv" }]
 
 [tool.poetry.dependencies]
 python = ">3.9.7, <4.0"
+1password = "^1.0.7"
 
 [build-system]
 requires = ["poetry-core"]
