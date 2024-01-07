@@ -16,6 +16,7 @@ def validate_dotenv_vault_exists(op: OnePassword) -> None:
 
 
 def get_uuid_for_project(project: str, op: OnePassword) -> str:
+    "Get the UUID for the project."
     uuids = [
         item["id"]
         for item in op.list_items(vault=DOTENV_VAULT)
@@ -29,6 +30,7 @@ def get_uuid_for_project(project: str, op: OnePassword) -> str:
 
 
 def get_fields_for_project(uuid: str, op: OnePassword) -> dict[str, str]:
+    "Get the fields for the project."
     return {
         field["label"]: field["value"]
         for field in op.get_item(uuid=uuid)["fields"]
@@ -37,12 +39,20 @@ def get_fields_for_project(uuid: str, op: OnePassword) -> dict[str, str]:
 
 
 def set_environment_variables(fields: dict[str, str], op: OnePassword) -> None:
+    "Set the environment variables."
     for key, val in fields.items():
         if val is not None:
             os.environ[key] = val
 
 
 def load_openv(project: str) -> None:
+    """
+    Load the environment variables for the project.
+    Ref: https://github.com/harttraveller/python-openv
+
+    Args:
+        project (str): the name of the project in the .env vault
+    """
     op = OnePassword()
     validate_dotenv_vault_exists(op=op)
     project_uuid = get_uuid_for_project(project=project, op=op)
