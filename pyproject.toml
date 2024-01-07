@@ -5,10 +5,10 @@ description = "Basically the same as python-dotenv except integrated with 1passw
 authors = ["Hart Traveller <ruling_fiction.0b@icloud.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{ include = "openv" }]
 
 [tool.poetry.dependencies]
 python = ">3.9.7, <4.0"
-
 
 [build-system]
 requires = ["poetry-core"]
